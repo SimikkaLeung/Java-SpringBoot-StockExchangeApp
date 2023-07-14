@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>MyMoney Bank - Stock Exchange</title>
+</head>
+<body>
+
+<p>Your order is placed successfully! Here is the current status of your order.</p>
+<table border="1">
+  <tr>
+    <th>Order ID</th>
+    <th>Trader ID</th>
+    <th>Stock Symbol</th>
+    <th>Selling / Buying</th>
+    <th>OrderType</th>
+    <th>Price</th>
+    <th>Initial Quantity</th>
+    <th>Remaining Quantity</th>
+    <th>Order Status</th>
+    <th>Order Time</th>
+  </tr>
+  <tr>
+    <td th:text="${updatedOrder.orderId}">
+	<td th:text="${updatedOrder.traderId}">
+	<td th:text="${updatedOrder.stockSymbol}">
+	<td th:if="${updatedOrder.isSelling}">Selling</td>
+	<td th:unless="${updatedOrder.isSelling}">Buying</td>
+	<td th:text="${updatedOrder.orderType}">
+	<td th:text="${updatedOrder.price}">
+	<td th:text="${updatedOrder.initialQuantity}">
+	<td th:text="${updatedOrder.remainingQuantity}">
+	<td th:text="${updatedOrder.orderStatus}"> 
+	<td th:text="${updatedOrder.orderTime}">						
+  </tr>
+</table>
+</body>
+</html>

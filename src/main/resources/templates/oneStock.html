@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>MyMoney Bank - Stock Exchange</title>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th>Order ID</th>
+    <th>Trader ID</th>
+    <th>Stock Symbol</th>
+    <th>Selling / Buying</th>
+    <th>OrderType</th>
+    <th>Price</th>
+    <th>Initial Quantity</th>
+    <th>Remaining Quantity</th>
+    <th>Order Status</th>
+    <th>Order Time</th>
+  </tr>
+  <tr th:each="order: ${stockOrderList}">
+    <td th:text="${order.orderId}">
+	<td th:text="${order.traderId}">
+	<td th:text="${order.stockSymbol}">
+	<td th:if="${order.isSelling}">Selling</td>
+	<td th:unless="${order.isSelling}">Buying</td>
+	<td th:text="${order.orderType}">
+	<td th:text="${order.price}">
+	<td th:text="${order.initialQuantity}">
+	<td th:text="${order.remainingQuantity}">
+	<td th:text="${order.orderStatus}"> 
+	<td th:text="${order.orderTime}">						
+  </tr>
+</table>
+</body>
+</html>

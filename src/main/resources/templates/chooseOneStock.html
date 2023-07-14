@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>MyMoney Bank - Stock Exchange</title>
+</head>
+<body>
+
+
+<div align="center">
+		<h3>MyMoney Bank - Filter Orders by Stock Symbol</h3>
+		<form action="#" th:action="@{/stocks/filter}" method="post">
+		<label>Stock Symbol: </label>
+		<select class="form-control" id="dropDownList4" th:name= "stockSymbol" th:value="${selectedStock.stockSymbol}">
+			<option th:each="stock: ${stockList}" th:value="${stock.stockSymbol}" th:text="${stock.stockSymbol}">
+			
+			</option>
+		</select>
+		
+		<input name="submit" type="submit" value="submit" />
+		</form>
+
+</div>
+</body>
+</html>
